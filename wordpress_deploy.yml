@@ -9,9 +9,9 @@
     https_proxy: "http://proxy.example.local:8080"
   roles:
     - { role: common, tags: common } #OSの基本設定
-    - { role: maradb, tags: mariadb } #DBの構築
+    - { role: maridb, tags: mariadb } #DBの構築
     #DB接続用ロードバランサの構築
-    - { role: proxy,cluster_service: db_cluster, tags: haproxy }
+    - { role: proxy, cluster_service: db_cluster, tags: haproxy }
     - { role: keepalived, cluster_service: db_cluster, tags: keepalived }
 
 - name: Deploy Application for Wordpress

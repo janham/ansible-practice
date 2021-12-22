@@ -1,3 +1,4 @@
+# OSの基本設定を行う
 ---
 #SELinuxのモード変更
 - name: configure / SELinux permissive

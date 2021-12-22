@@ -1,0 +1,15 @@
+---
+## firewalldのポート許可
+- name: check_install / Allow ports for firewalld
+	ansible.posix.firewalld:
+		port: "{{ item }}"
+		permanent: yes
+		immediate: yes
+		state: enabled
+	loop: "{{ mariadb_firewalld_port }}"
+
+## 不要なパッケージの削除
+- name: check_install / Remove necessary packages
+	yum:
+		name: mariadb-libs
+		state: absent

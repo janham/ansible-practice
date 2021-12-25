@@ -10,7 +10,7 @@
     backup: yes
 
 ## MariaDBの全停止
-- name: confiure / Stop all MariaDB for initialization
+- name: configure / Stop all MariaDB for initialization
   systemd:
     name: mysql
     state: stopped
